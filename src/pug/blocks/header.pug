@@ -1,0 +1,14 @@
+header.header(class=pageTitle==='Главная'?'header_color_duble header_position_fixed':'')
+	div.container
+		div.header__wrapper(class=pageTitle==='Главная'?'header__wrapper_animated':'')
+			a.header__logo-link(href="/")
+				img.header__logo-image(src="images/logo.svg" alt="Логотип Комплекс Инфо")
+				if pageTitle === "Главная"
+					img.header__logo-image.header__logo-image_color_blue(src="images/logo-blue.svg" alt="Логотип Комплекс Инфо")
+			include menu
+			div.hamburger
+				div.hamburger__line
+				div.hamburger__line
+				div.hamburger__line
+			div.header__phone-wrapper
+				a.header__phone(href="tel:+78312239966") +7 (831) 223-99-66

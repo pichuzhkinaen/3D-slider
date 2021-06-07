@@ -1,0 +1,35 @@
+form#form-vacancy.form-vacancy(style="display: none;" enctype="multipart/form-data")
+	div.form-vacancy__title Расскажите о себе
+	p.form-vacancy__prompt * - поля обязательные для заполнения
+	div.form-vacancy__input-group
+		label.form-vacancy__label(for="surname")
+		input#surname.form-vacancy__input(type="text" name="surname" placeholder="Фамилия *" required)
+	div.form-vacancy__input-group
+		label.form-vacancy__label(for="name-applicant")
+		input#name-applicant.form-vacancy__input(type="text" name="name" placeholder="Имя *" required)
+	div.form-vacancy__input-group
+		label.form-vacancy__label(for="patronymic")
+		input#patronymic.form-vacancy__input(type="text" name="patronymic" placeholder="Отчество")
+	div.form-vacancy__input-group
+		label.form-vacancy__label(for="phone")
+		input#phone-applicant.form-vacancy__input(type="tel" name="phone-applicant" placeholder="Номер телефона *" required data-phone)
+	div.form-vacancy__input-group
+		label.form-vacancy__label(for="email")
+		input#email.form-vacancy__input(type="email" name="email" placeholder="E-mail *" required)
+	div.form-vacancy__input-group
+		label.form-vacancy__label(for="letter")
+		textarea#letter.form-vacancy__textarea(name="letter" placeholder="Сопроводительное письмо")
+	div.form-vacancy__file-group
+		div.form-vacancy__file-wrapper
+			label.form-vacancy__file-label(for="file") Прикрепить резюме
+			input#file.form-vacancy__file-input(type="file" name="file" accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/msword, application/pdf")
+			span.form-vacancy__file-text Word или PDF до 20 мб
+		span.form-vacancy__file-name
+		span.file-error
+	div.form-vacancy__text-block
+		span.form-vacancy__text Отправляя форму, вы даете 
+		a.form-vacancy__link(href="#" target="_blank") согласие на обработку персональных данных 
+		span и соглашаетесь с 
+		a.form-vacancy__link(href="#" target="_blank") политикой конфиденциальности
+	div.form-vacancy__button-wrapper
+		input#form-vacancy-btn.form-vacancy__button.button.button_color_filled(type="submit" value="Отправить")

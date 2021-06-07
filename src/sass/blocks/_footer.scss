@@ -1,0 +1,74 @@
+.footer {
+    position: relative;
+    background-color: $color-main;
+    flex-shrink: 0;
+    margin-top: 120px;
+	&::before {
+		position: absolute;
+		top: 16px;
+        left: 0;
+		content: '';
+		width: 100%;
+		height: 8px;
+		background-color: $color-white;
+	}
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		padding: 48px 0;
+    }
+    &__logo {
+        display: block;
+        margin-right: 80px;
+    }
+    &__image {
+
+    }
+    &__menu {
+        margin-top: 5px;
+    }
+    &__bottom {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        color: $color-main;
+        background-color: $color-white;
+        padding: 8px 0;
+    }
+    &__bottom-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__copyright {
+
+    }
+    &__link {
+        color: $color-main;
+        text-decoration: underline;
+        transition: color .3s ease;
+        &:hover {
+            color: $color-main-light;
+        }
+    }
+    &__info {
+        &_position_right {
+            text-align: end;
+        }
+    }
+    &__phone {
+        @include reset-link;
+        color: $color-main;
+        transition: color .3s ease;
+        &:hover {
+            color: $color-main-light;
+        }
+    }
+    &__email {
+        @include reset-link;
+        color: $color-main;
+        transition: color .3s ease;
+        &:hover {
+            color: $color-main-light;
+        }
+    }
+}

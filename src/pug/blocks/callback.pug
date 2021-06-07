@@ -1,0 +1,17 @@
+div.callback
+	div.container
+		div.callback__title.page-subtitle Остались вопросы?
+	form.callback__form.form#callback-form
+		div.form__title Получите бесплатную консультацию по телефону
+		div.form__input-group
+			label.form__label(for="name")
+			input#name.form__input(type="text" name="name" placeholder="Ваше имя" required data-name)
+		div.form__input-group
+			label.form__label(for="phone")
+			input#phone.form__input(type="tel" name="phone" data-phone placeholder="Ваш номер телефона" required)
+		div.form__text-block
+			span.form__text Отправляя форму, вы даете 
+			a.form__link(href="#" target="_blank") согласие на обработку персональных данных 
+			span и соглашаетесь с 
+			a.form__link(href="#" target="_blank") политикой конфиденциальности
+		input.form__button.button#form-button(type="submit" value="Отправить заявку")
