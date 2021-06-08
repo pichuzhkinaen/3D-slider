@@ -1,19 +1,5 @@
-nav.header__menu.menu(class=pageTitle==='Главная'?'menu_type_home':'')
+nav.header__menu.menu
 	ul.menu__list
 		each item, key in menu
 			li(class=pageTitle===item.title || parentTitle===item.title?'active':'')
 				a(href=item.link)=item.title
-				if item.submenu
-					div.menu__submenu-wrapper
-						ul.menu__submenu.submenu
-							each subitem, subkey in item.submenu
-								li(class=pageTitle===subitem.title?'active':'')
-									a(href=subitem.link)=subitem.title
-									if subitem.subsubmenu
-										div.submenu__subsubmenu-wrapper.subsubmenu-wrapper
-											ul.submenu__subsubmenu.subsubmenu
-												each subsubitem, subsubkey in subitem.subsubmenu
-													li(class=pageTitle===subsubitem.title?'active':'')
-														a(href=subsubitem.link)=subsubitem.title
-	div.menu__phone-wrapper
-		a.menu__phone(href="tel:+78312239966") +7 (831) 223-99-66

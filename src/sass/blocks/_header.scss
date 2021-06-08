@@ -1,186 +1,43 @@
 .header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    background: $color-main;
-    &__menu {
-        margin-left: auto;
-    }
-	&__wrapper {
-        position: relative;
+    font-size: 12px;
+	line-height: 16px;
+    &__wrapper {
         display: flex;
-		justify-content: space-between;
-        align-items: center;
-        padding: 32px 0;
-        &_animated {
-            opacity: 0;
-            transform: translateY(-32px);
-            animation: shiftHeader 1.5s ease-out forwards;
-        }
+        justify-content: space-between;
+        align-items: flex-start;
     }
-    &__logo-link {
-        flex-shrink: 0;
-        position: relative;
-        min-height: 40px;
+    &__top {
+        background-color: $color-main-light;
+        padding: 8px 0;
     }
-    &__logo-image {
-        display: block;
-        opacity: 1;
-        transition: opacity .8s ease;
-        &_color_blue {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-        }
+    &__select {
+
+    }
+    &__link-wrapper {
+        color: $color-main;
+    }
+    &__email {
+        @include reset-link;
+        background: url('../../images/email.svg') no-repeat;
+        background-position: left center;
+        padding-left: 20px;
+        margin-right: 24px;
     }
     &__phone {
         @include reset-link;
-        position: relative;
-        color: $color-white;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
+        background: url('../../images/phone.svg') no-repeat;
         padding-left: 20px;
-        margin-left: 75px;
-        transition: color .3s ease;
-        &:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 3px;
-            width: 12px;
-            height: 12px;
-            background-color: $color-white;
-            mask-image: url('../images/phone-icon.svg');
-            mask-repeat: no-repeat;
-            transition: background-color .8s ease;
-        }
-        &:after {
-            background-color: $color-white;
-        }
-        &:hover {
-            color: $color-main-light;
-            &:after {
-                background-color: $color-main-light;
-            }
-        }
     }
-    &_color_duble {
-        background-color: transparent;
-        .menu li {
-            &::after {
-                background: $color-main;
-            }
-            a {
-                color: $color-main;
-                transition: color .8s ease;
-            }
-        }
-        .header__phone {
-            color: $color-main;
-            &:after {
-                background-color: $color-main;
-            }
-        }
+    &__bottom {
+
     }
-    &_color_white {
-        background-color: transparent;
-        .menu li {
-            &::after {
-                background: $color-white;
-            }
-            a {
-                color: $color-white;
-                transition: color .8s ease;
-            }
-        }
-        .header__phone {
-            color: $color-white;
-            &::after {
-                background-color: $color-white;
-            }
-        }
-        .submenu > li > a {
-            color: $color-main;
-        }
+    &__logo-link {
+
     }
-    &_color_blue {
-        background-color: transparent;
-        .menu li {
-            &::after {
-                background: $color-main;
-            }
-            a {
-                color: $color-main;
-                transition: color .8s ease;
-            }
-        }
-        .header__logo-image {
-            opacity: 0;
-        }
-        .header__logo-image_color_blue {
-            display: block;
-            opacity: 1;
-        }
-        .header__phone {
-            color:$color-main;
-            &::after {
-                background-color: $color-main;
-            }
-        }
-    }
-    &_background_reverse {
-        background-color: $color-white;
-    }
-    &_position_fixed {
-        position: fixed;
-        .menu__submenu li {
-            a:hover {
-                color: $color-main-light;
-            }
-        }
-        .header__phone {
-            &:hover {
-                color: $color-main-light;
-                &:after {
-                    background-color: $color-main-light;
-                }
-            } 
-        }
+    &__logo-image {
+
     }
 }
 .hamburger {
-    display: none;
-    order: 2;
-    width: 32px;
-    height: 26px;
-    cursor: pointer;
-    margin-left: 132px;
-	&__line {
-        width: 32px;
-		height: 4px;
-		border-radius: 4px;
-        background: $color-white;
-        margin-bottom: 6px;
-        transition: all .5s ease;
-		&:last-child {
-            margin-bottom: 0;
-		}
-	}
-    &.active {
-        .hamburger__line {
-            &:nth-child(1) {
-                transform: translateY(10px) rotate(-45deg);
-            }
-            &:nth-child(2) {
-                opacity: 0;
-            }
-            &:nth-child(3) {
-                transform: translateY(-10px) rotate(45deg);
-            }
-        }
-    }
+
 }

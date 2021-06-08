@@ -50,17 +50,17 @@ var path = {
     },
     build : {
         html : "build/",
-        html_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/komplex-info-2020.local/assets/template/",
+        // html_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/export/assets/template/",
         pug: "build/",
         pug_src: "src/html/",
         styles : "build/styles/",
-        styles_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/komplex-info-2020.local/assets/template/styles/",
+        // styles_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/export/assets/template/styles/",
         scripts : "build/scripts/",
-        scripts_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/komplex-info-2020.local/assets/template/scripts/",
+        // scripts_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/export/assets/template/scripts/",
         fonts : "build/fonts/",
-        fonts_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/komplex-info-2020.local/assets/template/fonts/",
+        // fonts_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/export/assets/template/fonts/",
         images : "build/images/",
-        images_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/komplex-info-2020.local/assets/template/images/",
+        // images_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/export/assets/template/images/",
     },
     watch : {
         html : "src/html/**/*.html",
@@ -133,7 +133,7 @@ gulp.task('pug', function(){
 		}))
 		.pipe(gulp.dest(path.build.pug_src))
 		.pipe(gulp.dest(path.build.pug))
-		.pipe(gulp.dest(path.build.html_modx))
+		// .pipe(gulp.dest(path.build.html_modx))
 		;
 });
 
@@ -152,7 +152,7 @@ gulp.task('styles', function(){
 		)
 		.pipe(concat('main.css'))
 		.pipe(gulp.dest(path.build.styles))
-		.pipe(gulp.dest(path.build.styles_modx))
+		// .pipe(gulp.dest(path.build.styles_modx))
 		.pipe(size({
 			showFiles: true
 		}))
@@ -163,7 +163,7 @@ gulp.task('styles', function(){
 		}))
 		.pipe(sourcemaps.write(""))
 		.pipe(gulp.dest(path.build.styles))
-		.pipe(gulp.dest(path.build.styles_modx))
+		// .pipe(gulp.dest(path.build.styles_modx))
 		;
 });
 gulp.task('styles-min', function(){
@@ -177,7 +177,7 @@ gulp.task('styles-min', function(){
 		)
 		.pipe(concat('main.css'))
 		.pipe(gulp.dest(path.build.styles))
-		.pipe(gulp.dest(path.build.styles_modx))
+		// .pipe(gulp.dest(path.build.styles_modx))
 		.pipe(size({
 			showFiles: true
 		}))
@@ -187,7 +187,7 @@ gulp.task('styles-min', function(){
 			showFiles: true
 		}))
 		.pipe(gulp.dest(path.build.styles))
-		.pipe(gulp.dest(path.build.styles_modx))
+		// .pipe(gulp.dest(path.build.styles_modx))
 		;
 });
 
@@ -197,7 +197,7 @@ gulp.task('styles-min', function(){
 gulp.task('fonts', function(){
 	return gulp.src(path.src.fonts)
 		.pipe(gulp.dest(path.build.fonts))
-		.pipe(gulp.dest(path.build.fonts_modx))
+		// .pipe(gulp.dest(path.build.fonts_modx))
 		;
 });
 
@@ -226,7 +226,7 @@ gulp.task('images', function(){
 					verbose: true
 				})))
 		.pipe(gulp.dest(path.build.images))
-		.pipe(gulp.dest(path.build.images_modx))
+		// .pipe(gulp.dest(path.build.images_modx))
 		;
 });
 gulp.task('clear-cache', function (done) {
@@ -242,7 +242,7 @@ gulp.task('scripts', function(){
 		.pipe(sourcemaps.init())
 		.pipe(concat('main.js'))
 		.pipe(gulp.dest(path.build.scripts))
-		.pipe(gulp.dest(path.build.scripts_modx))
+		// .pipe(gulp.dest(path.build.scripts_modx))
 		.pipe(size({
 			showFiles: true
 		}))
@@ -253,7 +253,7 @@ gulp.task('scripts', function(){
 		}))
 		.pipe(sourcemaps.write(""))
 		.pipe(gulp.dest(path.build.scripts))
-		.pipe(gulp.dest(path.build.scripts_modx))
+		// .pipe(gulp.dest(path.build.scripts_modx))
 		;
 });
 gulp.task('scripts-min', function(){
@@ -261,7 +261,7 @@ gulp.task('scripts-min', function(){
 		.pipe(plumber())
 		.pipe(concat('main.js'))
 		.pipe(gulp.dest(path.build.scripts))
-		.pipe(gulp.dest(path.build.scripts_modx))
+		// .pipe(gulp.dest(path.build.scripts_modx))
 		.pipe(size({
 			showFiles: true
 		}))
@@ -271,7 +271,7 @@ gulp.task('scripts-min', function(){
 			showFiles: true
 		}))
 		.pipe(gulp.dest(path.build.scripts))
-		.pipe(gulp.dest(path.build.scripts_modx))
+		// .pipe(gulp.dest(path.build.scripts_modx))
 		;
 });
 gulp.task('libscss', function(){
@@ -299,12 +299,12 @@ gulp.task('libsjs', function(){
 */ 
 gulp.task('browser-sync', function() { // Создаем таск browser-sync
     browserSync({ // Выполняем browser Sync
-    	/*server: { // Определяем параметры сервера
+    	server: { // Определяем параметры сервера
             baseDir: 'build' // Директория для сервера - app
-        },*/
+        },
         notify: true, // Включаем уведомления
-        proxy: "http://komplex-info-2020.local", // проксирование вашего удаленного сервера, не важно на чем back-end 
-        open: 'external',
+        // proxy: "http://komplex-info-2020.local", // проксирование вашего удаленного сервера, не важно на чем back-end 
+        // open: 'external',
         /*proxy: "", // проксирование вашего удаленного сервера, не важно на чем back-end 
         logPrefix: '', // префикс для лога bs, маловажная настройка 
         host:      '', // можно использовать ip сервера

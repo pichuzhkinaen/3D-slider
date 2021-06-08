@@ -1,33 +1,4 @@
 .breadcrumbs {
     @include reset-list;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    padding-top: 24px;
-    &__item {
-        display: flex;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 16px;
-        color: #CECECE;
-        &::after {
-            content: '-';
-            margin: 0 4px;
-        }
-        &:last-child {
-            &::after {
-                display: none;
-            }
-        }
-    }
-    &__link {
-        @include reset-link;
-        display: block;
-        text-decoration: underline;
-    }
-    &_type_text-page {
-        & .breadcrumbs__item {
-            color: #8c8c8c;
-        }
-    }
+
 }

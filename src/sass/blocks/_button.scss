@@ -1,42 +1,4 @@
 .button {
     @include reset-link;
-    display: inline-block;
-    height: 40px;
-    background: none;
-    border: 1px solid $color-white;
-    font-family: inherit;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 29px;
-    text-align: center;
-    color: $color-white;
-    padding: 5px 56px;
-    cursor: pointer;
-    transition: .3s ease;
-    margin-top: 24px;
-    &:hover {
-        color: $color-main-light;
-        background: $color-white;
-    }
-    &_color_invert {
-        border: 1px solid $color-main;
-        color: $color-main;
-        &:hover {
-            border: 1px solid $color-main-light;
-            color: $color-white;
-            background: $color-main-light;
-        }
-    }
-    &_color_filled {
-        color: $color-white;
-        background-color: $color-main-light;
-        border: none;
-        &:hover {
-            color: $color-white;
-            background-color: $color-main;
-        }
-    }
-}
-.button-wrapper {
-    text-align: center;
+    
 }

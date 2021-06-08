@@ -1,14 +1,21 @@
-header.header(class=pageTitle==='Главная'?'header_color_duble header_position_fixed':'')
-	div.container
-		div.header__wrapper(class=pageTitle==='Главная'?'header__wrapper_animated':'')
+header.header
+	div.header__top
+		div.container
+			div.header__wrapper
+				div.header__select.select-language
+					button.select-language__title Русский язык
+					ul.select-language__list
+						li.select-language__item(data-value="Русский язык") Русский язык
+						li.select-language__item(data-value="English") English
+				div.header__link-wrapper
+					a.header__email(href="mailto:export.help@info.ru") export.help@info.ru
+					a.header__phone(href="tel:+79452343434") +7 (945) 234-34-34
+	div.header__bottom
+		div.container
 			a.header__logo-link(href="/")
-				img.header__logo-image(src="images/logo.svg" alt="Логотип Комплекс Инфо")
-				if pageTitle === "Главная"
-					img.header__logo-image.header__logo-image_color_blue(src="images/logo-blue.svg" alt="Логотип Комплекс Инфо")
+				img.header__logo-image(src="images/logo.svg" alt="Логотип Центр экспорта")
 			include menu
 			div.hamburger
 				div.hamburger__line
 				div.hamburger__line
 				div.hamburger__line
-			div.header__phone-wrapper
-				a.header__phone(href="tel:+78312239966") +7 (831) 223-99-66
