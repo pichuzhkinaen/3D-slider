@@ -1063,7 +1063,7 @@ body.compensate-for-scrollbar {
   src: url("../fonts/Lato/Lato-Bold.eot");
   src: local("Lato Bold"), local("Lato-Bold"), url("../fonts/Lato/Lato-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato/Lato-Bold.woff") format("woff"), url("../fonts/Lato/Lato-Bold.ttf") format("truetype");
   font-weight: 700;
-  font-style: normal;
+  font-style: bold;
   font-display: swap;
 }
 
@@ -1158,6 +1158,7 @@ body.compensate-for-scrollbar {
   padding: 0;
   margin: 0;
   list-style-type: none;
+  background-color: #fff;
   -webkit-box-shadow: 0px 0px 20px rgba(38, 55, 61, 0.07);
   box-shadow: 0px 0px 20px rgba(38, 55, 61, 0.07);
   padding: 20px 20px;
@@ -1178,6 +1179,8 @@ body.compensate-for-scrollbar {
 }
 
 .header {
+  position: relative;
+  z-index: 10;
   font-size: 12px;
   line-height: 16px;
 }
@@ -1234,9 +1237,32 @@ body.compensate-for-scrollbar {
 }
 
 .button {
-  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  outline: 0px solid transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-size: inherit;
   color: inherit;
-  outline: none;
+  font: inherit;
+  border-radius: 0;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+  background-color: #3A82E0;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 8px rgba(26, 32, 34, 0.22);
+  box-shadow: 0px 0px 8px rgba(26, 32, 34, 0.22);
+  padding: 8px 40px;
+  -webkit-transition: background-color .1s ease;
+  -o-transition: background-color .1s ease;
+  transition: background-color .1s ease;
+}
+
+.button:hover {
+  background-color: #3472C5;
 }
 
 .breadcrumbs {
@@ -1314,6 +1340,11 @@ input.error {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
 }
 
 .text-block p:not([class]) {
@@ -1405,6 +1436,45 @@ input.error {
 .select-language__item:hover {
   background-color: #EBF7FF;
   color: #1C3E53;
+}
+
+.slider__item {
+  height: 560px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slider__item_number_1 {
+  background-image: url("../images/slider-1.jpg");
+}
+
+.slider__item_number_2 {
+  background-image: url("../images/slider-2.jpg");
+}
+
+.slider__item_number_3 {
+  background-image: url("../images/slider-3.jpg");
+}
+
+.slider__item_number_4 {
+  background-image: url("../images/slider-4.jpg");
+}
+
+.slider__item_number_5 {
+  background-image: url("../images/slider-5.jpg");
+}
+
+.slider__image {
+  display: block;
+  margin: 0 auto;
+}
+
+.slider__title {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 43px;
+  text-transform: uppercase;
 }
 
 /* ПОДКЛЮЧЕНИЕ СТИЛЕЙ АДАПТИВА */

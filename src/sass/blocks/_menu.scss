@@ -60,6 +60,7 @@
     }
     &__submenu {
         @include reset-list;
+        background-color: $color-white;
         box-shadow: 0px 0px 20px rgba(38, 55, 61, 0.07);
         padding: 20px 20px;
         li {

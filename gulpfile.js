@@ -275,7 +275,7 @@ gulp.task('scripts-min', function(){
 		;
 });
 gulp.task('libscss', function(){
-	return gulp.src(['src/lib/libs/fancybox/jquery.fancybox.css', 'src/lib/libs/slick-slider/slick.css', 'src/lib/libs/anamate-css/animate.min.css'])
+	return gulp.src(['src/lib/libs/fancybox/jquery.fancybox.css', 'src/lib/libs/slick-slider/slick.css'])
 		.pipe(plumber())
 		.pipe(concat('libs.css'))
 		.pipe(gulp.dest('src/lib/'))
@@ -285,7 +285,7 @@ gulp.task('libscss', function(){
 		.pipe(gulp.dest('src/lib/'));
 });
 gulp.task('libsjs', function(){
-	return gulp.src(['src/lib/libs/jquery/jquery-3.5.1.min.js', 'src/lib/libs/fancybox/jquery.fancybox.min.js', 'src/lib/libs/slick-slider/slick.min.js', 'src/lib/libs/jQuery-Waterwheel-Carousel/js/jquery.waterwheelCarousel.js', 'src/lib/libs/wow/wow.min.js'])
+	return gulp.src(['src/lib/libs/jquery/jquery-3.5.1.min.js', 'src/lib/libs/fancybox/jquery.fancybox.min.js', 'src/lib/libs/slick-slider/slick.min.js'])
 		.pipe(plumber())
 		.pipe(concat('libs.js'))
 		.pipe(gulp.dest('src/lib/'))

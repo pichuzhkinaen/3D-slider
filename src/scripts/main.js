@@ -13,6 +13,10 @@ $(document).ready(function(){
 		$('.select-language__title').html(value);
 		$('.select-language__list').removeClass('active');
 	});
+
+	$('#slider').slick({
+		
+	});
 	
 	
     // проставление маски на полe телефона
@@ -84,9 +88,6 @@ $(document).ready(function(){
 $(window).on("resize", function(){
 	let vh = window.innerHeight * 0.01;
 	document.documentElement.style.setProperty('--vh', vh + 'px');
-	if (screen.width <= 1220 && !$("#slider").hasClass("slick-initialized")) {
-		slickInit();
-	}
 });
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', vh + 'px');
