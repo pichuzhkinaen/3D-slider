@@ -4,7 +4,7 @@
     &__wrapper {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
     }
     &__top {
         background-color: $color-main-light;
@@ -29,15 +29,15 @@
         padding-left: 20px;
     }
     &__bottom {
-
+        padding: 24px 0;
     }
     &__logo-link {
 
     }
     &__logo-image {
-
+        display: block;
     }
 }
 .hamburger {
-
+    display: none;
 }

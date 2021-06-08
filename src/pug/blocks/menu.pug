@@ -3,3 +3,9 @@ nav.header__menu.menu
 		each item, key in menu
 			li(class=pageTitle===item.title || parentTitle===item.title?'active':'')
 				a(href=item.link)=item.title
+				if item.submenu
+					div.menu__submenu-wrapper
+						ul.menu__submenu
+							each subitem, subkey in item.submenu
+								li(class=pageTitle===subitem.title?'active':'')
+									a(href=subitem.link)=subitem.title
