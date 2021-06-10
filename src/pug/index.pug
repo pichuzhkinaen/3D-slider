@@ -15,3 +15,15 @@ block content
 								h1.slider__title=item.title
 							div.slider__description=item.descr
 							button.slider__button.button=item.link
+		section.content__section
+			div.container 
+				h2.title Наши проекты
+				div.cards
+					each item, key in project
+						div.cards__item
+							img.cards__image(src=`images/logo-project-${item.image}.svg` alt=`Проект ${item.image}`)
+				div.cards
+					each item, key in project
+						div.cards__item.cards__item_type_hover
+		include blocks/callback
+		include blocks/footer

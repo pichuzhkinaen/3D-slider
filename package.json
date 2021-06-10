@@ -35,5 +35,8 @@
     "gulp-watch": "^5.0.1",
     "imagemin-jpegoptim": "^6.0.0",
     "imagemin-pngquant": "^8.0.0"
+  },
+  "dependencies": {
+    "jshint": "^2.13.0"
   }
 }

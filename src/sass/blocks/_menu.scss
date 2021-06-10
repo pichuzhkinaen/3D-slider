@@ -77,5 +77,25 @@
 }
 
 .menu-footer {
-    
+    color: $color-white;
+    &__list {
+        @include reset-list;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    &__submenu-wrapper {
+        margin-top: 24px;
+    }
+    &__submenu {
+        @include reset-list;
+        font-size: 12px;
+        line-height: 16px;
+        li {
+            margin-top: 16px;
+        }
+    }
+    a {
+        @include reset-link;
+    }
 }

@@ -52,7 +52,7 @@
                       </ul>
                     </div>
                   </li>
-                  <li><a href="#">полезное</a>
+                  <li><a href="#">Полезное</a>
                   </li>
                   <li><a href="#">Контакты</a>
                   </li>
@@ -68,28 +68,34 @@
         </div>
       </header>
       <main class="content">
-        <div class="callback">
-          <div class="container">
-            <div class="callback__title page-subtitle">Остались вопросы?</div>
+        <section class="content__section callback">
+          <div class="container"> 
+            <h2 class="title">Получить консультацию</h2>
+            <div class="callback__background">
+              <form class="form callback__form" id="callback">
+                <div class="form__wrapper">
+                  <div class="form__group">
+                    <label class="form__label" for="name">ФИО</label>
+                    <input class="form__input" id="name" type="text" name="name" placeholder=" Иванов Иван Иванович">
+                  </div>
+                  <div class="form__group">
+                    <label class="form__label" for="phone">Номер телефона</label>
+                    <input class="form__input" id="phone" type="tel" name="phone" placeholder="+7 (___) ___-__-__">
+                  </div>
+                  <div class="form__group">
+                    <label class="form__label" for="email">E-mail</label>
+                    <input class="form__input" id="email" type="email" name="email" placeholder="name@mail.ru">
+                  </div>
+                  <button class="button form__button" id="send" type="submit">Отправить</button>
+                </div>
+              </form>
+            </div>
           </div>
-          <form class="callback__form form" id="callback-form">
-            <div class="form__title">Получите бесплатную консультацию по телефону</div>
-            <div class="form__input-group">
-              <label class="form__label" for="name"></label>
-              <input class="form__input" id="name" type="text" name="name" placeholder="Ваше имя" required data-name>
-            </div>
-            <div class="form__input-group">
-              <label class="form__label" for="phone"></label>
-              <input class="form__input" id="phone" type="tel" name="phone" data-phone placeholder="Ваш номер телефона" required>
-            </div>
-            <div class="form__text-block"><span class="form__text">Отправляя форму, вы даете </span><a class="form__link" href="#" target="_blank">согласие на обработку персональных данных </a><span>и соглашаетесь с </span><a class="form__link" href="#" target="_blank">политикой конфиденциальности</a></div>
-            <input class="form__button button" id="form-button" type="submit" value="Отправить заявку">
-          </form>
-        </div>
+        </section>
       </main>
-      <footer class="footer">
+      <footer class="footer content__section">
         <div class="container">
-          <div class="footer__wrapper"><a class="footer__logo" href="index.html"><img class="footer__image" src="images/logo.svg" alt="Логотип Комплекс Инфо"></a>
+          <div class="footer__top">
             <div class="footer__menu menu-footer">
               <ul class="menu-footer__list">
                 <li><a href="about-us.html">О нас</a>
@@ -116,20 +122,16 @@
                     </ul>
                   </div>
                 </li>
-                <li><a href="#">полезное</a>
+                <li><a href="#">Полезное</a>
                 </li>
                 <li><a href="#">Контакты</a>
                 </li>
               </ul>
             </div>
           </div>
-        </div>
-        <div class="footer__bottom">
-          <div class="container">
-            <div class="footer__bottom-wrapper">
-              <div class="footer__info"><span class="footer__copyright">&copy; ООО «Комплекс – инфо», 2006—2020 <br></span><a class="footer__link" href="#">Политика конфиденциальности.</a> <a class="footer__link" href="#">Политика в отношении обработки персональных данных.</a></div>
-              <div class="footer__info_position_right"><span>Телефон: <a class="footer__phone" href="tel:+78312239966">+7 (831) 223-99-66 <br> </a></span><span>E-mail: <a class="footer__email" href="mailto:info@komplex-group.ru">info@komplex-group.ru </a></span></div>
-            </div>
+          <div class="footer__bottom"><a class="footer__logo" href="/"><img class="footer__image" src="images/logo-white.svg" alt="Логотип Центр экспорта"></a>
+            <div class="footer__info"><a class="footer__email" href="mailto:export.help@info.ru">export.help@info.ru</a><a class="footer__phone" href="tel:+79452343434">+7 (945) 234-34-34 </a></div>
+            <div class="footer__info"><span class="footer__copyright">2020 «Export Help». Все права защищены. </span><a class="footer__link" href="#">Политика конфиденциальности.</a><br><a class="footer__link" href="#">Политика в отношении обработки персональных данных.</a></div>
           </div>
         </div>
       </footer>

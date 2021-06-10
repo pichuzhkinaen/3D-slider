@@ -1,29 +1,25 @@
-footer.footer
+footer.footer.content__section
 	div.container
-		div.footer__wrapper
-			a.footer__logo(href="index.html")
-				img.footer__image(src="images/logo.svg" alt="Логотип Комплекс Инфо")
+		div.footer__top
 			div.footer__menu.menu-footer
 				ul.menu-footer__list
 					each item, key in menu
-						li
-							a(class=pageTitle===item.title || parentTitle===item.title?'active':'' href=item.link)=item.title
+						li(class=pageTitle===item.title || parentTitle===item.title?'active':'')
+							a(href=item.link)=item.title
 							if item.submenu
 								div.menu-footer__submenu-wrapper
 									ul.menu-footer__submenu
 										each subitem, subkey in item.submenu
 											li(class=pageTitle===subitem.title?'active':'')
 												a(href=subitem.link)=subitem.title
-	div.footer__bottom
-		div.container
-			div.footer__bottom-wrapper
-				div.footer__info
-					span.footer__copyright &copy; ООО «Комплекс – инфо», 2006—2020 #[br]
-					a.footer__link(href="#") Политика конфиденциальности.
-					|  
-					a.footer__link(href="#") Политика в отношении обработки персональных данных.
-				div.footer__info_position_right
-					span Телефон: 
-						a.footer__phone(href="tel:+78312239966") +7 (831) 223-99-66 #[br] 
-					span E-mail: 
-						a.footer__email(href="mailto:info@komplex-group.ru") info@komplex-group.ru 
+		div.footer__bottom
+			a.footer__logo(href="/")
+				img.footer__image(src="images/logo-white.svg" alt="Логотип Центр экспорта")
+			div.footer__info
+				a.footer__email(href="mailto:export.help@info.ru") export.help@info.ru
+				a.footer__phone(href="tel:+79452343434") +7 (945) 234-34-34 
+			div.footer__info
+				span.footer__copyright 2020 «Export Help». Все права защищены. 
+				a.footer__link(href="#") Политика конфиденциальности.
+				br
+				a.footer__link(href="#") Политика в отношении обработки персональных данных.

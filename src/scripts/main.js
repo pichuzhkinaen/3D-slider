@@ -15,7 +15,10 @@ $(document).ready(function(){
 	});
 
 	$('#slider').slick({
-		
+		arrows: false,
+		dots: true,
+		// touchMove: true,
+		focusOnSelect: true,
 	});
 	
 	
