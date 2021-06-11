@@ -285,7 +285,7 @@ gulp.task('libscss', function(){
 		.pipe(gulp.dest('src/lib/'));
 });
 gulp.task('libsjs', function(){
-	return gulp.src(['src/lib/libs/jquery/jquery-3.5.1.min.js', 'src/lib/libs/fancybox/jquery.fancybox.min.js', 'src/lib/libs/slick-slider/slick.min.js'])
+	return gulp.src(['src/lib/libs/jquery/jquery-3.5.1.min.js', 'src/lib/libs/fancybox/jquery.fancybox.min.js', 'src/lib/libs/slick-slider/slick.min.js', 'src/lib/libs/jQuery-Waterwheel-Carousel/js/jquery.waterwheelCarousel.js'])
 		.pipe(plumber())
 		.pipe(concat('libs.js'))
 		.pipe(gulp.dest('src/lib/'))

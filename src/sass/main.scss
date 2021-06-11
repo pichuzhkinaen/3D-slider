@@ -153,6 +153,7 @@ input.error {
 		background-size: cover;
 		// background-position-y: 70%;
 		background-repeat: no-repeat;
+		cursor: pointer;
 		&::before {
 			position: absolute;
 			top: 0;
@@ -202,6 +203,9 @@ input.error {
 		font-weight: bold;
 	}
 	&__button {
+		@include reset-link;
+		display: inline-block;
+		color: $color-white;
 		margin-top: 24px;
 	}
 }
@@ -217,22 +221,31 @@ input.error {
 	cursor: pointer;
 	position: relative;
 	z-index: 2;
-	margin-top: -20px;
+	margin-top: -30px;
 	& > li {
-		width: 80px;
-		height: 4px;
-		background-color: $color-white;
-		box-shadow: 0px 0px 8px rgba(26, 32, 34, 0.22);
-		border-radius: 4px;
+		padding: 10px 0;
 		margin: 0 4px;
-		&.slick-active {
+		&.slick-active button {
 			background-color: $color-main;
 		}
 		button {
-			display: none;
+			@include reset-button;
+			width: 80px;
+			height: 4px;
+			color: transparent;
+			background-color: $color-white;
+			box-shadow: 0px 0px 8px rgba(26, 32, 34, 0.22);
+			border-radius: 4px;
 		}
 	}
 }
+.slider__item {
+	// left: 0;
+	&.animate {
+		animation: 4s linear 0s slideChange;
+	}
+}
+
 .callback {
 	&__background {
 		background: linear-gradient(rgba(28, 62, 83, 0.5)), url('../images/form-bg.jpg');
@@ -247,19 +260,54 @@ input.error {
 	align-items: flex-start;
 	margin: 0 -12px;
 	&__item  {
+		position: relative;
+		width: 374px;
+		height: 256px;
 		background: $color-white;
 		border: 1px solid #F2F2F2;
 		border-radius: 4px;
 		padding: 76px 62px;
 		margin: 0 12px 24px 12px;
-		&_type_hover {
-			background: $color-main-light;
-			border: 1px solid #DCE9F1;
-			box-shadow: 0px 0px 20px rgba(38, 55, 61, 0.07);
-			padding: 24px
+		&:hover {
+			border: transparent;
+			& .cards__overlay {
+				opacity: 1;
+				border: 1px solid #DCE9F1;
+			}
 		}
 	}
+	&__overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 374px;
+		height: 256px;
+		background: $color-main-light;
+		border: transparent;
+		border-radius: 4px;
+		box-shadow: 0px 0px 20px rgba(38, 55, 61, 0.07);
+		padding: 24px;
+		margin: 0;
+		opacity: 0;
+		transition: opacity .4s ease;
+	}
+	&__text-block {
+		margin-bottom: 8px;
+		span {
+			&:first-child {
+				color: $color-main;
+			}
+			&:last-child {
+				color: $color-black;
+			}
+		}
+	}
+	&__button {
+		display: block;
+		margin: 24px auto 0 auto;
+	}
 }
+
 
 
 

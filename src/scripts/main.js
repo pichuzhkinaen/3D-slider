@@ -14,13 +14,39 @@ $(document).ready(function(){
 		$('.select-language__list').removeClass('active');
 	});
 
+	// $("#slider").waterwheelCarousel({
+	// 	autoPlay: 1,
+	// });
+
 	$('#slider').slick({
 		arrows: false,
 		dots: true,
-		// touchMove: true,
-		focusOnSelect: true,
+		// centerMode: true,
+		// fade: true,
 	});
-	
+
+	$('.slider__item').on('click', function() {
+		// console.log(this);
+		// $(this).css('z-index', 1);
+		const currentSlide = $('#slider').slick('slickCurrentSlide');
+		$('#slider').slick('slickGoTo', currentSlide + 1);
+	});
+
+	$('.slick-dots li').on('click', function() {
+		const index = $(this).index();
+		$('#slider').slick('slickGoTo', index);
+	});
+
+	$('#slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+		$('.slider__item').removeClass('animate');
+		// $('.slider__item').eq(currentSlide).attr('aria-hidden', 'true');
+		$('.slider__item').eq(nextSlide).addClass('animate');
+		
+	});
+	$('#slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
+		$('.slider__item').eq(currentSlide - 1).attr('aria-hidden', 'true');		
+	});
+
 	
     // проставление маски на полe телефона
 	(function (){

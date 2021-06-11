@@ -1047,6 +1047,23 @@ body.compensate-for-scrollbar {
 }
 
 @charset "UTF-8";
+@-webkit-keyframes slideChange {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes slideChange {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
 /* Lato Regular */
 @font-face {
   font-family: 'Lato';
@@ -1686,6 +1703,7 @@ input.error {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .slider__item::before {
@@ -1748,6 +1766,11 @@ input.error {
 }
 
 .slider__button {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  display: inline-block;
+  color: #fff;
   margin-top: 24px;
 }
 
@@ -1772,25 +1795,41 @@ input.error {
   cursor: pointer;
   position: relative;
   z-index: 2;
-  margin-top: -20px;
+  margin-top: -30px;
 }
 
 .slick-dots > li {
-  width: 80px;
-  height: 4px;
-  background-color: #fff;
-  -webkit-box-shadow: 0px 0px 8px rgba(26, 32, 34, 0.22);
-  box-shadow: 0px 0px 8px rgba(26, 32, 34, 0.22);
-  border-radius: 4px;
+  padding: 10px 0;
   margin: 0 4px;
 }
 
-.slick-dots > li.slick-active {
+.slick-dots > li.slick-active button {
   background-color: #3A82E0;
 }
 
 .slick-dots > li button {
-  display: none;
+  border: none;
+  background-color: transparent;
+  outline: 0px solid transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-size: inherit;
+  color: inherit;
+  font: inherit;
+  border-radius: 0;
+  width: 80px;
+  height: 4px;
+  color: transparent;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 8px rgba(26, 32, 34, 0.22);
+  box-shadow: 0px 0px 8px rgba(26, 32, 34, 0.22);
+  border-radius: 4px;
+}
+
+.slider__item.animate {
+  -webkit-animation: 4s linear 0s slideChange;
+  animation: 4s linear 0s slideChange;
 }
 
 .callback__background {
@@ -1813,6 +1852,9 @@ input.error {
 }
 
 .cards__item {
+  position: relative;
+  width: 374px;
+  height: 256px;
   background: #fff;
   border: 1px solid #F2F2F2;
   border-radius: 4px;
@@ -1820,12 +1862,49 @@ input.error {
   margin: 0 12px 24px 12px;
 }
 
-.cards__item_type_hover {
-  background: #EBF7FF;
+.cards__item:hover {
+  border: transparent;
+}
+
+.cards__item:hover .cards__overlay {
+  opacity: 1;
   border: 1px solid #DCE9F1;
+}
+
+.cards__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 374px;
+  height: 256px;
+  background: #EBF7FF;
+  border: transparent;
+  border-radius: 4px;
   -webkit-box-shadow: 0px 0px 20px rgba(38, 55, 61, 0.07);
   box-shadow: 0px 0px 20px rgba(38, 55, 61, 0.07);
   padding: 24px;
+  margin: 0;
+  opacity: 0;
+  -webkit-transition: opacity .4s ease;
+  -o-transition: opacity .4s ease;
+  transition: opacity .4s ease;
+}
+
+.cards__text-block {
+  margin-bottom: 8px;
+}
+
+.cards__text-block span:first-child {
+  color: #3A82E0;
+}
+
+.cards__text-block span:last-child {
+  color: #1C3E53;
+}
+
+.cards__button {
+  display: block;
+  margin: 24px auto 0 auto;
 }
 
 /* ПОДКЛЮЧЕНИЕ СТИЛЕЙ АДАПТИВА */

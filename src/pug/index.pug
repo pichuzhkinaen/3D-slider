@@ -14,7 +14,10 @@ block content
 							if item.title
 								h1.slider__title=item.title
 							div.slider__description=item.descr
-							button.slider__button.button=item.link
+							if item.link === 'Подробнее'
+								button.slider__button.button(type="button")=item.link
+							else 
+								a.slider__button.button(type="button" href="#callback")=item.link
 		section.content__section
 			div.container 
 				h2.title Наши проекты
@@ -22,8 +25,20 @@ block content
 					each item, key in project
 						div.cards__item
 							img.cards__image(src=`images/logo-project-${item.image}.svg` alt=`Проект ${item.image}`)
-				div.cards
-					each item, key in project
-						div.cards__item.cards__item_type_hover
+							div.cards__overlay
+								div.cards__text-block
+									span Заказчик: 
+									span=item.name
+								div.cards__text-block
+									span Продукция: 
+									span=item.product
+								div.cards__text-block
+									span Внешний рынок: 
+									span=item.market
+								div.cards__text-block
+									span Срок выхода на рынок: 
+									span=item.time
+								button.cards__button.button(type="button") Подробнее
+
 		include blocks/callback
 		include blocks/footer
