@@ -83,6 +83,13 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        a {
+            margin-top: 16px;
+            transition: color .1s ease;
+            &:hover {
+                color: #a0d7ff;
+            }
+        }
     }
     &__submenu-wrapper {
         margin-top: 24px;

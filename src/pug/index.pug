@@ -18,6 +18,11 @@ block content
 								button.slider__button.button(type="button")=item.link
 							else 
 								a.slider__button.button(type="button" href="#callback")=item.link
+		div.container
+			ul.slider__dots-list
+				each item, key in slider
+					li.slider__dots-item
+						button.slider__dots-button(type="button")
 		section.content__section
 			div.container 
 				h2.title Наши проекты

@@ -676,38 +676,99 @@ $(document).ready(function(){
 		$('.select-language__list').removeClass('active');
 	});
 
-	// $("#slider").waterwheelCarousel({
-	// 	autoPlay: 1,
-	// });
 
-	$('#slider').slick({
-		arrows: false,
-		dots: true,
-		// centerMode: true,
-		// fade: true,
-	});
+	let currentSlide = 0;
+	$('.slider__dots-button').eq(0).addClass('active');
 
 	$('.slider__item').on('click', function() {
+
+		let targetSlide = this;
+		animationSlider(targetSlide);	
+		// let currentSlide = $(this).index();
+		// animationSlider(currentSlide);	
+	});
+
+	$('.slider__dots-item').on('click', function() {
 		// console.log(this);
-		// $(this).css('z-index', 1);
-		const currentSlide = $('#slider').slick('slickCurrentSlide');
-		$('#slider').slick('slickGoTo', currentSlide + 1);
+		$('.slider__dots-button').removeClass('active');
+		$(this).children($('.slider__dots-button')).addClass('active');
+		let targetSlideIndex = $(this).index(),
+			targetSlide = $('.slider__item').eq(targetSlideIndex);
+		console.log(targetSlideIndex);
+		animationSliderDot(targetSlideIndex);
 	});
 
-	$('.slick-dots li').on('click', function() {
-		const index = $(this).index();
-		$('#slider').slick('slickGoTo', index);
-	});
 
-	$('#slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-		$('.slider__item').removeClass('animate');
-		// $('.slider__item').eq(currentSlide).attr('aria-hidden', 'true');
-		$('.slider__item').eq(nextSlide).addClass('animate');
+	function animationSlider(targetSlide) {
+		// console.log(currentSlide);
+		// 	$('.slider__item').css('zIndex', 50).removeClass('animate');
+		// 	$('.slider__item').eq(currentSlide).css('zIndex', 4000).addClass('animate');
+
+		// 	currentSlide = 0;
+		// 	$('.slider__dots-button').removeClass('active');
+		// 	$('.slider__dots-button').eq(currentSlide).addClass('active');
+
+		if ($(targetSlide).next().length === 0) {
+			$(targetSlide).prev().css('zIndex', 50).removeClass('animate');
+			$('.slider__item:eq(0)').css('zIndex', 4000);
+			currentSlide = 0;
+			$('.slider__dots-button').removeClass('active');
+			$('.slider__dots-button').eq(currentSlide).addClass('active');
+		} else {
+			$(targetSlide).prev().css('zIndex', 50).removeClass('animate');
+			$(targetSlide).next().css('zIndex', 3000).addClass('animate');
+			currentSlide += 1;
+			$('.slider__dots-button').removeClass('active');
+			$('.slider__dots-button').eq(currentSlide).addClass('active');
+		}	
+		console.log(currentSlide);
+	}
+
+	function animationSliderDot(targetSlideIndex) {
+		const slide = $('.slider__item').eq(targetSlideIndex);
 		
-	});
-	$('#slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
-		$('.slider__item').eq(currentSlide - 1).attr('aria-hidden', 'true');		
-	});
+		$(slide).css('zIndex', 3000).addClass('animate');
+	}
+
+
+	// $('.slider__item').on('click', function() {
+	// 	$(this).next().animate({
+	// 		left: '100%',
+	// 		function(){
+	// 			console.log($(this).next());
+	// 		},
+	// 	}, 500,);
+	// });
+
+	// $('#slider').slick({
+	// 	arrows: false,
+	// 	dots: true,
+	// 	speed: 2000,
+	// 	// centerMode: true,
+	// 	// fade: true,
+	// });
+
+	// $('.slider__item').on('click', function() {
+	// 	// console.log(this);
+	// 	// $(this).css('z-index', 1);
+	// 	const currentSlide = $('#slider').slick('slickCurrentSlide');
+	// 	$('#slider').slick('slickGoTo', currentSlide + 1);
+	// });
+
+	// $('.slick-dots li').on('click', function() {
+	// 	const index = $(this).index();
+	// 	$('#slider').slick('slickGoTo', index);
+	// });
+
+	// $('#slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+	// 	$('.slider__item').removeClass('animate');
+	// 	// $('.slider__item').eq(currentSlide).attr('aria-hidden', 'true');
+	// 	$('.slider__item').eq(nextSlide).addClass('animate');
+		
+	// });
+	// $('#slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
+	// 	$('.slider__item').eq(currentSlide - 1).attr('aria-hidden', 'true');		
+	// });
 
 	
     // проставление маски на полe телефона
@@ -718,26 +779,26 @@ $(document).ready(function(){
 		find = /\+7/;
 
 	    $("body").on("focus", "input[data-phone]", function(){
-	    	this.value = code+" " + this.value.replace(code+' ','');
+	    	this.value = code + " " + this.value.replace(code + ' ', '');
 	    });
 	    $("body").on("input", "input[data-phone]", function(){
-	    	let val = this.value.replace(find,''),
-				res = code+" ";
-			val = val.replace(/[^0-9]/g,'');
+	    	let val = this.value.replace(find, ''),
+				res = code + " ";
+			val = val.replace(/[^0-9]/g, '');
 
-			for(let i =0;i<val.length;i++){
-				res+= i===0?' (':'';
-				res+= i==3?') ':'';
-				res+= i==6 || i==8?' ':'';
-				if(i==10) break;
-				res+= val[i];
+			for (let i = 0; i < val.length; i++){
+				res += i === 0 ? ' (' : '';
+				res += i == 3 ? ') ' : '';
+				res += i == 6 || i == 8 ? ' ' : '';
+				if (i == 10) break;
+				res += val[i];
 			}
 			this.value = res;
 	    });
 	    $("body").on("blur", "input[data-phone]", function(){
-	    	let val = this.value.replace(find,'');
+	    	let val = this.value.replace(find, '');
 			val = val.trim();
-			if(!val) this.value = null;
+			if (!val) this.value = null;
 	    });
 	})();
 

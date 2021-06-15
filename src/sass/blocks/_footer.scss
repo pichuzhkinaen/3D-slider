@@ -34,17 +34,51 @@
     }
     &__email {
         @include reset-link;
+        position: relative;
         display: inline-block;
-        background: url('../../images/email-white.svg') no-repeat;
         background-position: left center;
         padding-left: 20px;
         margin-right: 24px;
+        transition: color .1s ease;
+        &::before {
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 16px;
+            height: 12px;
+            content: '';
+            mask-image: url('../../images/email-white.svg');
+            background-color: $color-white;
+        }
+        &:hover {
+            color: #a0d7ff;
+            &::before {
+                background-color: #a0d7ff;
+            }
+        }
     }
     &__phone {
         @include reset-link;
+        position: relative;
         display: inline-block;
-        background: url('../../images/phone-white.svg') no-repeat;
         padding-left: 20px;
+        transition: color .1s ease;
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            content: '';
+            mask-image: url('../../images/phone-white.svg');
+            background-color: $color-white;
+        }
+        &:hover {
+            color: #a0d7ff;
+            &::before {
+                background-color: #a0d7ff;
+            }
+        }
     }
     &__copyright {
 
@@ -52,5 +86,9 @@
     &__link {
         @include reset-link;
         text-decoration: underline;
+        transition: color .1s ease;
+        &:hover {
+            color: #a0d7ff;
+        }
     }
 }
