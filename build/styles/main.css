@@ -1841,39 +1841,33 @@ input.error {
 }
 
 .slider__item_number_1 {
-  left: 0;
-  z-index: 50;
   height: 560px;
   background-image: url("../images/slider-1.jpg");
 }
 
 .slider__item_number_2 {
-  z-index: 40;
   height: 560px;
   background-image: url("../images/slider-2.jpg");
 }
 
 .slider__item_number_3 {
-  z-index: 30;
   height: 560px;
   background-image: url("../images/slider-3.jpg");
 }
 
 .slider__item_number_4 {
-  z-index: 20;
   height: 560px;
   background-image: url("../images/slider-4.jpg");
 }
 
 .slider__item_number_5 {
-  z-index: 10;
   height: 560px;
   background-image: url("../images/slider-5.jpg");
 }
 
 .slider__item.animate {
-  -webkit-animation: 2s linear 0s slideChange;
-  animation: 2s linear 0s slideChange;
+  -webkit-animation: 1s linear 0s slideChange;
+  animation: 1s linear 0s slideChange;
 }
 
 .slider__text-wrapper {

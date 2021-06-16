@@ -15,68 +15,62 @@ $(document).ready(function(){
 	});
 
 
-	let currentSlide = 0;
-	$('.slider__dots-button').eq(0).addClass('active');
+	// slider start
+	let currentSlide = $('.slider__item:eq(0)');
+	$('.slider__dots-button:eq(0)').addClass('active');
+	
+	$('.slider__item').each(function(indx){
+		$(this).css('zIndex', indx + 1);
+	});
+
+	$('.slider__item').css('zIndex', 0);
+	$('.slider__item:eq(0)').css('zIndex', 1);
 
 	$('.slider__item').on('click', function() {
-
-		let targetSlide = this;
-		animationSlider(targetSlide);	
-		// let currentSlide = $(this).index();
-		// animationSlider(currentSlide);	
+		currentSlide = this;
+		let slideIndex = $(currentSlide).index(),
+			zIndex = +$(currentSlide).css('zIndex');
+		animationSlider(currentSlide, slideIndex, zIndex);
 	});
 
 	$('.slider__dots-item').on('click', function() {
 		// console.log(this);
 		$('.slider__dots-button').removeClass('active');
 		$(this).children($('.slider__dots-button')).addClass('active');
-		let targetSlideIndex = $(this).index(),
-			targetSlide = $('.slider__item').eq(targetSlideIndex);
-		console.log(targetSlideIndex);
-		animationSliderDot(targetSlideIndex);
+		let slideIndex = $(this).index();
+		currentSlide = $('.slider__item').eq(slideIndex),
+		zIndex = +$(currentSlide).css('zIndex');
+		console.log(slideIndex);
+		animationSliderDot(slideIndex, currentSlide);
 	});
 
+	function animationSliderDot(slideIndex, currentSlide, zIndex) {
+		$('.slider__item').css('zIndex', 0);
+		$(currentSlide).css('zIndex', 1).addClass('animate');
+		console.log(slideIndex, currentSlide, zIndex)
+	}
 
-	function animationSlider(targetSlide) {
-		// console.log(currentSlide);
-		// 	$('.slider__item').css('zIndex', 50).removeClass('animate');
-		// 	$('.slider__item').eq(currentSlide).css('zIndex', 4000).addClass('animate');
-
-		// 	currentSlide = 0;
-		// 	$('.slider__dots-button').removeClass('active');
-		// 	$('.slider__dots-button').eq(currentSlide).addClass('active');
-
-		if ($(targetSlide).next().length === 0) {
-			$(targetSlide).prev().css('zIndex', 50).removeClass('animate');
-			$('.slider__item:eq(0)').css('zIndex', 4000);
-			currentSlide = 0;
-			$('.slider__dots-button').removeClass('active');
-			$('.slider__dots-button').eq(currentSlide).addClass('active');
-		} else {
-			$(targetSlide).prev().css('zIndex', 50).removeClass('animate');
-			$(targetSlide).next().css('zIndex', 3000).addClass('animate');
-			currentSlide += 1;
-			$('.slider__dots-button').removeClass('active');
-			$('.slider__dots-button').eq(currentSlide).addClass('active');
-		}	
+	function animationSlider(currentSlide, slideIndex, zIndex) {
 		console.log(currentSlide);
-	}
-
-	function animationSliderDot(targetSlideIndex) {
-		const slide = $('.slider__item').eq(targetSlideIndex);
 		
-		$(slide).css('zIndex', 3000).addClass('animate');
+		if ($(currentSlide).next().length === 0) {
+			$(currentSlide).removeClass('animate');
+			$('.slider__item:eq(0)').css('zIndex', zIndex + 1);
+
+			$('.slider__dots-button').removeClass('active');
+			$('.slider__dots-button:eq(0)').addClass('active');
+
+			currentSlide = $('.slider__item:eq(0)');
+		} else {
+			$(currentSlide).removeClass('animate');
+			$(currentSlide).next().css('zIndex', zIndex + 1).addClass('animate');
+
+			$('.slider__dots-button').removeClass('active');
+			$('.slider__dots-button').eq(slideIndex + 1).addClass('active');
+
+			currentSlide = $(currentSlide).next();
+		}
 	}
-
-
-	// $('.slider__item').on('click', function() {
-	// 	$(this).next().animate({
-	// 		left: '100%',
-	// 		function(){
-	// 			console.log($(this).next());
-	// 		},
-	// 	}, 500,);
-	// });
 
 	// $('#slider').slick({
 	// 	arrows: false,
@@ -107,6 +101,8 @@ $(document).ready(function(){
 	// $('#slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
 	// 	$('.slider__item').eq(currentSlide - 1).attr('aria-hidden', 'true');		
 	// });
+
+	// slider end
 
 	
     // проставление маски на полe телефона
