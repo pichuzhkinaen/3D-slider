@@ -15,7 +15,7 @@ block content
 								h1.slider__title=item.title
 							div.slider__description=item.descr
 							if item.link === 'Подробнее'
-								button.slider__button.button(type="button")=item.link
+								a.slider__button.button(href="about-us.html")=item.link
 							else 
 								a.slider__button.button(type="button" href="#callback")=item.link
 		div.container
@@ -44,6 +44,3 @@ block content
 									span Срок выхода на рынок: 
 									span=item.time
 								button.cards__button.button(type="button") Подробнее
-
-		include blocks/callback
-		include blocks/footer

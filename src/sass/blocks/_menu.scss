@@ -42,6 +42,8 @@
         }
         a {
             @include reset-link;
+            position: relative;
+            z-index: 2;
             display: inline-block;
             height: 100%;
         }
@@ -50,6 +52,7 @@
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 1;
         width: 200px;
         color: $color-black;
         text-transform: none;

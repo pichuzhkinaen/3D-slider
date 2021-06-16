@@ -15,9 +15,11 @@ html(lang="ru")
 	body
 		div.wrapper
 			include blocks/header
+			if pageTitle !== "Главная"
+				include blocks/breadcrumbs
 			main.content
 				block content
-			if pageTitle !== "Главная"
-				include blocks/footer
+			include blocks/callback
+			include blocks/footer
 		block scripts
 			script(src="scripts/main.min.js?v=" + versionFiles)

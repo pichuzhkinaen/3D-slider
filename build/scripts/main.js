@@ -662,18 +662,26 @@ tpl:'<div class="fancybox-share"><h1>{{SHARE}}</h1><p><a class="fancybox-share__
 })(jQuery);
 $(document).ready(function(){
 
+	const languageList = $('.select-language__list');
+
 	$('.select-language__title').on('click', function() {
-		if ($('.select-language__list').hasClass('active')) {
-			$('.select-language__list').removeClass('active');
+		if ($(languageList).hasClass('active')) {
+			$(languageList).removeClass('active');
 		} else {
-			$('.select-language__list').addClass('active');
+			$(languageList).addClass('active');
 		}
 	});
 
 	$('.select-language__item').on('click', function() {
 		const value = $(this).attr('data-value');
 		$('.select-language__title').html(value);
-		$('.select-language__list').removeClass('active');
+		$(languageList).removeClass('active');
+	});
+
+	$(document).mouseup(function (e){
+		if (!languageList.is(e.target)) {
+			languageList.removeClass('active');
+		}
 	});
 
 
