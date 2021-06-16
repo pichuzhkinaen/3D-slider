@@ -50,17 +50,17 @@ var path = {
     },
     build : {
         html : "build/",
-        // html_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/export/assets/template/",
+        // html_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/export.local/assets/template/",
         pug: "build/",
         pug_src: "src/html/",
         styles : "build/styles/",
-        // styles_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/export/assets/template/styles/",
+        // styles_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/export.local/assets/template/styles/",
         scripts : "build/scripts/",
-        // scripts_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/export/assets/template/scripts/",
+        // scripts_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/export.local/assets/template/scripts/",
         fonts : "build/fonts/",
-        // fonts_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/export/assets/template/fonts/",
+        // fonts_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/export.local/assets/template/fonts/",
         images : "build/images/",
-        // images_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/export/assets/template/images/",
+        // images_modx : "C:/servers/open-server-5.3.8/OpenServer/domains/export.local/assets/template/images/",
     },
     watch : {
         html : "src/html/**/*.html",
@@ -303,7 +303,7 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
             baseDir: 'build' // Директория для сервера - app
         },
         notify: true, // Включаем уведомления
-        // proxy: "http://komplex-info-2020.local", // проксирование вашего удаленного сервера, не важно на чем back-end 
+        // proxy: "http://export.local", // проксирование вашего удаленного сервера, не важно на чем back-end 
         // open: 'external',
         /*proxy: "", // проксирование вашего удаленного сервера, не важно на чем back-end 
         logPrefix: '', // префикс для лога bs, маловажная настройка 

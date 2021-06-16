@@ -701,8 +701,9 @@ $(document).ready(function(){
 
 	$(sliderItem).on('click', function() {
 		currentSlide = this;
-		let slideIndex = $(currentSlide).index();
-		animationSlider(currentSlide, slideIndex);
+		let slideIndex = $(currentSlide).index(),
+			zIndex = +$(currentSlide).css('zIndex');
+		animationSlider(currentSlide, slideIndex, zIndex);
 	});
 
 	$('.slider__dots-item').on('click', function() {
@@ -710,42 +711,36 @@ $(document).ready(function(){
 		$(this).children($(dotBtn)).addClass('active');
 		
 		const dotIndex = $(this).index();
+		console.log(dotIndex);
 		animationSliderDot(dotIndex);
 	});
-	
-	
-	function animationSliderDot(dotIndex) {
-		
-		if (!$(sliderItem).css('zIndex', 1)) {
-			$(sliderItem).css('zIndex', 0).removeClass('animate');
-		}
-		$(sliderItem).eq(dotIndex).css('zIndex', 1).addClass('animate');
 
+	function animationSliderDot(dotIndex) {
+		$(sliderItem).css('zIndex', 0).removeClass('animate');
+		$(sliderItem).eq(dotIndex).css('zIndex', 1000).addClass('animate');
 	}
 
-	function animationSlider(currentSlide, slideIndex) {
-		// console.log(currentSlide);
+	function animationSlider(currentSlide, slideIndex, zIndex) {
+		console.log(currentSlide);
 		
 		if ($(currentSlide).next().length === 0) {
 			$(currentSlide).removeClass('animate');
-			$(sliderItem).css('zIndex', 0);
-			$(sliderItem).eq(0).css('zIndex', 1);
+			$(sliderItem).eq(0).css('zIndex', zIndex + 1);
 
 			$(dotBtn).removeClass('active');
 			$(dotBtn).eq(0).addClass('active');
 
+			currentSlide = $(sliderItem).eq(0);
 		} else {
 			$(currentSlide).removeClass('animate');
-			$(sliderItem).css('zIndex', 0);
-			$(currentSlide).css('zIndex', 1);
-			$(currentSlide).next().css('zIndex', 2).addClass('animate');
+			$(currentSlide).next().css('zIndex', zIndex + 1).addClass('animate');
 
 			$(dotBtn).removeClass('active');
 			$(dotBtn).eq(slideIndex + 1).addClass('active');
 
+			currentSlide = $(currentSlide).next();
 		}
 	}
-	
 
 	// $('#slider').slick({
 	// 	arrows: false,

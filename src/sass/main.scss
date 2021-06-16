@@ -418,6 +418,10 @@ input.error {
 		position: absolute;
 		top: 0;
 		left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
 		width: 374px;
 		height: 256px;
 		background: $color-main-light;
@@ -440,7 +444,7 @@ input.error {
 		}
 	}
 	&__button {
-		display: block;
+		display: none;
 		margin: 24px auto 0 auto;
 	}
 }
