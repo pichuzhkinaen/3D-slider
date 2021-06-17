@@ -6,14 +6,20 @@ block variables
 
 block content
 	div.content__wrapper
-		section.content__section.exporter 
+		section.content__section
 			div.container
-				h1.title.exporter__title Экспортеру
+				h1.title Экспортеру
 				p Экспортёр — сторона в международных экономических отношениях, поставляющая товары, услуги, труд, капитал, другие предметы международной торговли другой стороне (импортёру), которая использует их для производства других товаров, услуг или потребляет.
-				div.exporter__cards.cards-info 
-					div.cards-info__item(style=`background-image: url('images/exporter-1.jpg');`)
+				div.cards-info 
+					a.cards-info__item(href="#")
+						picture
+							source(srcset="images/exporter-1.jpg")
+							img(src="images/exporter-1.jpg" alt="Начинающему экспортеру")
 						h2.cards-info__title Начинающему #[br] экспортеру
 						button.cards-info__button.button(type="button") Подробнее
-					div.cards-info__item(style=`background-image: url('images/exporter-2.jpg');`)
+					a.cards-info__item(href="#")
+						picture
+							source(srcset="images/exporter-2.jpg")
+							img(src="images/exporter-2.jpg" alt="Действующему экспортеру")
 						h2.cards-info__title Действующему #[br] экспортеру
 						button.cards-info__button.button(type="button") Подробнее

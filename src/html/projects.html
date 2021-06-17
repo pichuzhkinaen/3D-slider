@@ -3,7 +3,7 @@
   <head> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Главная</title>
+    <title>Наши проекты</title>
     <link href="styles/main.min.css?v=0" rel="stylesheet">
   </head>
   <body>
@@ -42,7 +42,7 @@
                   </li>
                   <li><a href="#">Аналитика</a>
                   </li>
-                  <li><a href="projects.html">Наши проекты</a>
+                  <li class="active"><a href="projects.html">Наши проекты</a>
                     <div class="menu__submenu-wrapper">
                       <ul class="menu__submenu">
                         <li><a href="#">Сельское хозяйство</a></li>
@@ -67,97 +67,26 @@
           </div>
         </div>
       </header>
+      <div class="container">
+        <ul class="breadcrumbs">
+          <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Главная</a></li>
+          <li class="breadcrumbs__item">Наши проекты</li>
+        </ul>
+      </div>
       <main class="content">
         <div class="content__wrapper">
-          <div class="slider" id="slider">
-            <div class="slider__item slider__item_number_1">
-              <div class="container">
-                <div class="slider__text-wrapper">
-                  <h1 class="slider__title">Центр экспорта</h1>
-                  <div class="slider__description">Решаем вопросы с экспортом до реальных продаж</div><a class="slider__button button" href="about-us.html">Подробнее</a>
-                </div>
-              </div>
-            </div>
-            <div class="slider__item slider__item_number_2">
-              <div class="container">
-                <div class="slider__text-wrapper">
-                  <div class="slider__description">Проведем маркетинговое исследование в вашей нише</div><a class="slider__button button" type="button" href="#callback">Оставить заявку</a>
-                </div>
-              </div>
-            </div>
-            <div class="slider__item slider__item_number_3">
-              <div class="container">
-                <div class="slider__text-wrapper">
-                  <div class="slider__description">Найдем потенциальных клиентов вашей продукции</div><a class="slider__button button" type="button" href="#callback">Оставить заявку</a>
-                </div>
-              </div>
-            </div>
-            <div class="slider__item slider__item_number_4">
-              <div class="container">
-                <div class="slider__text-wrapper">
-                  <div class="slider__description">Разработаем стратегию выхода на внешний рынок</div><a class="slider__button button" type="button" href="#callback">Оставить заявку</a>
-                </div>
-              </div>
-            </div>
-            <div class="slider__item slider__item_number_5">
-              <div class="container">
-                <div class="slider__text-wrapper">
-                  <div class="slider__description">Полное сопровождение вашей компании на внешнем рынке</div><a class="slider__button button" type="button" href="#callback">Оставить заявку</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="container">
-            <ul class="slider__dots-list">
-              <li class="slider__dots-item">
-                <button class="slider__dots-button" type="button"></button>
-              </li>
-              <li class="slider__dots-item">
-                <button class="slider__dots-button" type="button"></button>
-              </li>
-              <li class="slider__dots-item">
-                <button class="slider__dots-button" type="button"></button>
-              </li>
-              <li class="slider__dots-item">
-                <button class="slider__dots-button" type="button"></button>
-              </li>
-              <li class="slider__dots-item">
-                <button class="slider__dots-button" type="button"></button>
-              </li>
-            </ul>
-          </div>
           <section class="content__section">
-            <div class="container"> 
-              <h2 class="title">Наши проекты</h2>
-              <div class="cards">
-                <div class="cards__item"><img class="cards__image" src="images/logo-project-1.svg" alt="Проект 1">
-                  <div class="cards__overlay">
-                    <div class="cards__text-block"><span>Заказчик: </span><span>АО Русская медная компания</span></div>
-                    <div class="cards__text-block"><span>Продукция: </span><span>Медь</span></div>
-                    <div class="cards__text-block"><span>Внешний рынок: </span><span>Зимбабве</span></div>
-                    <div class="cards__text-block"><span>Срок выхода на рынок: </span><span>1 год</span></div>
-                    <button class="cards__button button" type="button">Подробнее</button>
-                  </div>
-                </div>
-                <div class="cards__item"><img class="cards__image" src="images/logo-project-2.svg" alt="Проект 2">
-                  <div class="cards__overlay">
-                    <div class="cards__text-block"><span>Заказчик: </span><span>АО Бамтоннельстрой</span></div>
-                    <div class="cards__text-block"><span>Продукция: </span><span>Металл</span></div>
-                    <div class="cards__text-block"><span>Внешний рынок: </span><span>Зимбабве</span></div>
-                    <div class="cards__text-block"><span>Срок выхода на рынок: </span><span>полгода</span></div>
-                    <button class="cards__button button" type="button">Подробнее</button>
-                  </div>
-                </div>
-                <div class="cards__item"><img class="cards__image" src="images/logo-project-3.svg" alt="Проект 3">
-                  <div class="cards__overlay">
-                    <div class="cards__text-block"><span>Заказчик: </span><span>АО Великоустюгский ликёро-водочный завод</span></div>
-                    <div class="cards__text-block"><span>Продукция: </span><span>Алкоголь</span></div>
-                    <div class="cards__text-block"><span>Внешний рынок: </span><span>Зимбабве</span></div>
-                    <div class="cards__text-block"><span>Срок выхода на рынок: </span><span>2 года</span></div>
-                    <button class="cards__button button" type="button">Подробнее</button>
-                  </div>
-                </div>
-              </div>
+            <div class="container">
+              <h1 class="title">Наши проекты</h1>
+              <div class="cards-info"><a class="cards-info__item" href="#" style="background-image: url('images/project-1.jpg');">
+                  <h2 class="cards-info__title">Сельское <br> хозяйство</h2>
+                  <button class="cards-info__button button" type="button">Подробнее</button></a><a class="cards-info__item" href="#" style="background-image: url('images/project-2.jpg');">
+                  <h2 class="cards-info__title">Пищевая <br> промышленность</h2>
+                  <button class="cards-info__button button" type="button">Подробнее</button></a><a class="cards-info__item" href="#" style="background-image: url('images/project-3.jpg');">
+                  <h2 class="cards-info__title">Цветные металлы</h2>
+                  <button class="cards-info__button button" type="button">Подробнее</button></a><a class="cards-info__item" href="#" style="background-image: url('images/project-4.jpg');">
+                  <h2 class="cards-info__title">Строительство</h2>
+                  <button class="cards-info__button button" type="button">Подробнее</button></a></div>
             </div>
           </section>
         </div>
@@ -205,7 +134,7 @@
                 </li>
                 <li><a href="#">Аналитика</a>
                 </li>
-                <li><a href="projects.html">Наши проекты</a>
+                <li class="active"><a href="projects.html">Наши проекты</a>
                   <div class="menu-footer__submenu-wrapper">
                     <ul class="menu-footer__submenu">
                       <li><a href="#">Сельское хозяйство</a></li>

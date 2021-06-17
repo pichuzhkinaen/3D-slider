@@ -2,24 +2,16 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    border-radius: 4px;
-    margin: 48px -12px 0;
+    flex-wrap: wrap;
+    margin: 48px -12px -24px;
     &__item  {
+        @include reset-link;
         position: relative;
-        width: 50%;
+        width: calc(50% - 24px);
         background-repeat: no-repeat;
+        border-radius: 4px;
         padding: 102px 40px;
-        margin: 0 12px;
-        &::before {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 0;
-            content: '';
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(90deg, #EBF7FF 0.69%, rgba(255, 255, 255, 0) 100%);
-        }
+        margin: 0 12px 24px;
     }
     &__title {
         font-size: 24px;
