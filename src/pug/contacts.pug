@@ -5,21 +5,30 @@ block variables
 	- var pageTitle = "Контакты"
 
 block content
-	div.content__info.info
-		div.container
-			div.info__block
-				div.column
-					div.info__image
-						div.info__map#map
-				div.column
-					div.info__text-wrapper.text-block
-						div.info__subtitle Реквизиты оператора
-						ul 
-							li ООО «Комплекс-Инфо»#[br]
-							li Юридический адрес:#[br]
-							li 603096, Россия, г. Нижний Новгород, ул. Силикатная,&#160;4, офис 305#[br]
-							li Наименование банка: ФИЛИАЛ «НИЖЕГОРОДСКИЙ» АО «АЛЬФА-БАНК»#[br]
-							li р/сч 40702810629090001155#[br]
-							li БИК 042202824#[br]
-							li к/сч 30101810200000000824#[br]
-							li ИНН 5260169329 КПП 526301001#[br]
+	section.content__section.contacts
+		div.container 
+			h2.title Контакты
+			div.contacts__wrapper
+				div.contacts__text-block.text-block
+					ul 
+						li.contacts__item(data-address) Россия, г. Н. Новгород, ул. Большая Покровская, 15
+						li.contacts__item
+							a.contacts__link(href="tel:+79452343434" data-phone) +7 (945) 234-34-34 
+						li.contacts__item 
+							a.contacts__link(href="tel:+79452343434" data-fax) +7 (945) 234-34-34
+						li.contacts__item 
+							a.contacts__link(href="mailto:export.help@info.ru" data-email) Export.help@info.ru
+					div.contacts__subtitle Отдел маркетинговых исследований
+					ul 
+						li.contacts__item 
+							a.contacts__link(href="tel:+79452343434" data-phone) +7 (945) 234-34-34
+						li.contacts__item 
+							a.contacts__link(href="mailto:export.help@info.ru" data-email) Name@info.ru
+					div.contacts__subtitle Отдел переводов документов
+					ul 
+						li.contacts__item 
+							a.contacts__link(href="tel:+79452343434" data-phone) +7 (945) 234-34-34
+						li.contacts__item 
+							a.contacts__link(href="mailto:export.help@info.ru" data-email) Name@info.ru
+				div.contacts__map-wrapper
+					div.contacts__map#map

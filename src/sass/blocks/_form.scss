@@ -30,8 +30,16 @@
             color: $color-gray;
         }
     }
+    &__agreement {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    &__link {
+        @include reset-link;
+        text-decoration: underline;
+    }
     &__button {
         display: block;
-        margin: 0 auto;
+        margin: 30px auto 0 auto;
     }
 }

@@ -823,23 +823,34 @@ $(document).ready(function(){
 
 		function init(){ 
 			var myMap = new ymaps.Map("map", {
-				center: [56.359619, 43.832279],
-				zoom: 15,
+				center: [56.323268, 44.001324],
+				zoom: 17,
 				controls: ["zoomControl"],
 			});
 			myMap.behaviors.disable('scrollZoom');
 			// Создание геообъекта с типом точка (метка).
 			var myGeoObject = new ymaps.GeoObject({
-				geometry: {
-					type: "Point", // тип геометрии - точка
-					coordinates: [56.359619, 43.832279] // координаты точки
-				},
 				properties: {
 					// hintContent: "Москва",
-					balloonContentHeader: "Komplex-info",
-					balloonContentBody: "Россия, Нижний Новгород, Силикатная, 4",
+					balloonContentHeader: "Export-line",
+					balloonContentBody: "Россия, Нижний Новгород, Большая Покровская, 15",
 				},
 			});
+
+			myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
+				// Опции.
+				// Необходимо указать данный тип макета.
+				iconLayout: 'default#image',
+				// Своё изображение иконки метки.
+				iconImageHref: 'images/geo-map.svg',
+				// Размеры метки.
+				iconImageSize: [98, 98],
+				// Смещение левого верхнего угла иконки относительно
+				// её "ножки" (точки привязки).
+				iconImageOffset: [-50, -85],
+			});
+			myMap.geoObjects.add(myPlacemark);
+
 			// Размещение геообъекта на карте.
 			myMap.geoObjects.add(myGeoObject); 
 		}	

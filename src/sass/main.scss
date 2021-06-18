@@ -75,6 +75,8 @@ input.error {
 }
 
 .title {
+	font-size: 24px;
+	line-height: 32px;
 	margin-top: 0;
 	margin-bottom: 24px;
 }
@@ -387,7 +389,8 @@ input.error {
 
 .callback {
 	&__background {
-		background: linear-gradient(rgba(28, 62, 83, 0.5)), url('../images/form-bg.jpg');
+		background-image: linear-gradient(rgba(28, 62, 83, 0.5)), url('../images/form-bg.jpg');
+		background-size: cover;
 	}
 	&__form {
 
@@ -446,6 +449,70 @@ input.error {
 	&__button {
 		display: none;
 		margin: 24px auto 0 auto;
+	}
+}
+.contacts {
+	&__wrapper {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		margin: 0 -22px;
+	}
+	&__text-block {
+		width: 450px;
+		margin: 0 22px;
+		& ul li {
+			
+			& > a {
+				@include reset-link;
+			}
+		}
+	}
+	&__item {
+		&:not(:first-child) {
+			margin-top: 16px;
+		}
+		&[data-address] {
+			padding-left: 24px;
+			background: url('../images/geo.svg') 0 2px no-repeat;
+		}
+	}
+	&__link {
+		padding-left: 24px;
+		&[data-phone] {
+			background: url('../images/phone-gray.svg') left no-repeat;
+			
+		}
+		&[data-fax] {
+			background: url('../images/fax.svg') left no-repeat;
+		}
+		&[data-email] {
+			background: url('../images/email-gray.svg') left no-repeat;
+		}
+	}
+	&__subtitle {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		font-weight: bold;
+		margin: 48px 0 24px;
+		&::after {
+			content: '';
+			flex-grow: 1;
+			height: 1px;
+			background-color: $color-gray;
+			margin: 11px 0 0 8px;
+		}
+	}
+	&__map-wrapper {
+		width: 675px;
+		height: 464px;
+		background-color: #FCFCF7;
+		margin: 0 22px;
+	}
+	&__map {
+		width: 100%;
+		height: 100%;
 	}
 }
 
