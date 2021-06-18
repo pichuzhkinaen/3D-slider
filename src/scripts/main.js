@@ -23,19 +23,15 @@ $(document).ready(function(){
 	});
 
 
-	// slider start
+	// home-slider start
 	const dotBtn = $('.slider__dots-button'),
 		  sliderItem = $('.slider__item');
 	let currentSlide = $('.slider__item:eq(0)');
 
 	$('.slider__dots-button:eq(0)').addClass('active');
-	
-	$(sliderItem).each(function(indx){
-		$(this).css('zIndex', indx + 1);
-	});
 
 	$(sliderItem).css('zIndex', 0);
-	$(sliderItem).eq(0).css('zIndex', 1);
+	$(currentSlide).css('zIndex', 1);
 
 	$(sliderItem).on('click', function() {
 		currentSlide = this;
@@ -56,7 +52,6 @@ $(document).ready(function(){
 
 		animationSliderDot(dotIndex, currentSlide);
 	});
-	
 	
 	function animationSliderDot(dotIndex, currentSlide) {
 		$(currentSlide).css('zIndex', 1);
@@ -90,7 +85,26 @@ $(document).ready(function(){
 			$(dotBtn).eq(slideIndex + 1).addClass('active');
 		}
 	}
-	// slider end
+	// home-slider end
+
+
+	$('#slider-project, #slider-category').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		prevArrow: '<button type="button" class="cards__prev"></button>',
+		nextArrow: '<button type="button" class="cards__next"></button>',
+	});
+
+
+	$('.slider__button[href="#callback"]').on('click', function (event) {
+		event.preventDefault();
+
+		const id  = $(this).attr('href'),
+			  top = $(id).offset().top;
+
+		$('body,html').animate({scrollTop: top - 120}, 500);
+	});
+
 	
     // проставление маски на полe телефона
 	(function (){

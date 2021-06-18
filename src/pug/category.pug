@@ -9,7 +9,7 @@ block content
 		section.content__section
 			div.container
 				h1.title Сельское хозяйство
-				div.cards
+				div#slider-category.cards
 					each item, key in project
 						div.cards__item
 							img.cards__image(src=`images/logo-project-${item.image}.svg` alt=`Проект ${item.image}`)

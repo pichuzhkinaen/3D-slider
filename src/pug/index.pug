@@ -6,7 +6,7 @@ block variables
 		
 block content
 	div.content__wrapper
-		div#slider.slider
+		div.slider
 			each item, key in slider
 				div.slider__item(class=`slider__item_number_${key + 1}`)
 					div.container
@@ -26,7 +26,7 @@ block content
 		section.content__section
 			div.container 
 				h2.title Наши проекты
-				div.cards
+				div#slider-project.cards
 					each item, key in project
 						div.cards__item
 							img.cards__image(src=`images/logo-project-${item.image}.svg` alt=`Проект ${item.image}`)
