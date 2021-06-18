@@ -710,16 +710,24 @@ $(document).ready(function(){
 		$(this).children($(dotBtn)).addClass('active');
 		
 		const dotIndex = $(this).index();
-		animationSliderDot(dotIndex);
+
+		currentSlide = $(sliderItem).filter(function () { 
+			return $(this).css('zIndex') > 0; 
+		});
+		// console.log(currentSlide);
+
+		animationSliderDot(dotIndex, currentSlide);
 	});
 	
 	
-	function animationSliderDot(dotIndex) {
-		
-		if (!$(sliderItem).css('zIndex', 1)) {
+	function animationSliderDot(dotIndex, currentSlide) {
+		$(currentSlide).css('zIndex', 1);
+		$(sliderItem).eq(dotIndex).css('zIndex', 2).addClass('animate');
+
+		setTimeout (function() {
 			$(sliderItem).css('zIndex', 0).removeClass('animate');
-		}
-		$(sliderItem).eq(dotIndex).css('zIndex', 1).addClass('animate');
+			$(sliderItem).eq(dotIndex).css('zIndex', 2).addClass('animate');
+		}, 1000);
 
 	}
 
@@ -729,7 +737,7 @@ $(document).ready(function(){
 		if ($(currentSlide).next().length === 0) {
 			$(currentSlide).removeClass('animate');
 			$(sliderItem).css('zIndex', 0);
-			$(sliderItem).eq(0).css('zIndex', 1);
+			$(sliderItem).eq(0).css('zIndex', 1).addClass('animate');
 
 			$(dotBtn).removeClass('active');
 			$(dotBtn).eq(0).addClass('active');
@@ -742,43 +750,9 @@ $(document).ready(function(){
 
 			$(dotBtn).removeClass('active');
 			$(dotBtn).eq(slideIndex + 1).addClass('active');
-
 		}
 	}
-	
-
-	// $('#slider').slick({
-	// 	arrows: false,
-	// 	dots: true,
-	// 	speed: 2000,
-	// 	// centerMode: true,
-	// 	// fade: true,
-	// });
-
-	// $('.slider__item').on('click', function() {
-	// 	// console.log(this);
-	// 	// $(this).css('z-index', 1);
-	// 	const currentSlide = $('#slider').slick('slickCurrentSlide');
-	// 	$('#slider').slick('slickGoTo', currentSlide + 1);
-	// });
-
-	// $('.slick-dots li').on('click', function() {
-	// 	const index = $(this).index();
-	// 	$('#slider').slick('slickGoTo', index);
-	// });
-
-	// $('#slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-	// 	$('.slider__item').removeClass('animate');
-	// 	// $('.slider__item').eq(currentSlide).attr('aria-hidden', 'true');
-	// 	$('.slider__item').eq(nextSlide).addClass('animate');
-		
-	// });
-	// $('#slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
-	// 	$('.slider__item').eq(currentSlide - 1).attr('aria-hidden', 'true');		
-	// });
-
 	// slider end
-
 	
     // проставление маски на полe телефона
 	(function (){

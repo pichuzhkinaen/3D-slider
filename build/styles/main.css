@@ -1932,26 +1932,31 @@ input.error {
 }
 
 .slider__item_number_1 {
+  width: 1903px;
   height: 560px;
   background-image: url("../images/slider-1.jpg");
 }
 
 .slider__item_number_2 {
+  width: 1903px;
   height: 560px;
   background-image: url("../images/slider-2.jpg");
 }
 
 .slider__item_number_3 {
+  width: 1903px;
   height: 560px;
   background-image: url("../images/slider-3.jpg");
 }
 
 .slider__item_number_4 {
+  width: 1903px;
   height: 560px;
   background-image: url("../images/slider-4.jpg");
 }
 
 .slider__item_number_5 {
+  width: 1903px;
   height: 560px;
   background-image: url("../images/slider-5.jpg");
 }
@@ -1962,7 +1967,6 @@ input.error {
 }
 
 .slider__text-wrapper {
-  position: relative;
   width: 447px;
 }
 
@@ -2180,15 +2184,15 @@ input.error {
 }
 
 .contacts__link[data-phone] {
-  background: url("../images/phone-gray.svg") left no-repeat;
+  background: url("../images/phone-gray.svg") 0 1px no-repeat;
 }
 
 .contacts__link[data-fax] {
-  background: url("../images/fax.svg") left no-repeat;
+  background: url("../images/fax.svg") 0 1px no-repeat;
 }
 
 .contacts__link[data-email] {
-  background: url("../images/email-gray.svg") left no-repeat;
+  background: url("../images/email-gray.svg") 0 1px no-repeat;
 }
 
 .contacts__subtitle {
