@@ -1,15 +1,6 @@
-@import "_variables";
 @import "_mixins";
 @import "_keyframes";
 @import "_fonts";
-
-@import "blocks/menu";
-@import "blocks/header";
-@import "blocks/button";
-@import "blocks/breadcrumbs";
-@import "blocks/form";
-@import "blocks/footer";
-@import "blocks/cards-info";
 
 html, body {
 	font-family: 'Lato', sans-serif;
@@ -18,8 +9,8 @@ html, body {
 	text-size-adjust: none;
 	font-size: 18px;
 	line-height: 24px;
-	background-color: $color-white;
-	color: $color-black;
+	background-color: #fff;
+	color: #000;
 	position: relative;
 }
 * {
@@ -29,28 +20,6 @@ img {
 	border: none;
 	max-width: 100%;
 }
-button {
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	&:focus,
-	&:active{
-		outline: 0px solid transparent;
-	}
-}
-picture {
-	display: block;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-input.error {
-	box-shadow: 0 0 2px 1px red;
-}
-
-#workemail{
-	display: none;
-}
 
 .container {
 	margin: 0 auto;
@@ -58,98 +27,6 @@ input.error {
 	min-width: 320px;
 	max-width: 1250px;
 	padding: 0 40px;	
-}
-
-.wrapper {
-	min-height: 100vh;
-	min-height: calc(var(--vh) * 100);
-	display: flex;
-	flex-direction: column;
-}
-.content {
-	position: relative;
-	z-index: 1;
-	&__section {
-		margin-top: 48px;
-	}
-}
-
-.title {
-	font-size: 24px;
-	line-height: 32px;
-	margin-top: 0;
-	margin-bottom: 24px;
-}
-
-.text-block {
-	p:not([class]) {
-		margin: 0 0 16px 0;
-	}
-	ul:not([class]) {
-		@include reset-list;
-	}
-}
-
-.required {
-	&::after {
-		content: '*';
-		color: #EB5757;
-	}
-}
-
-.select-language {
-	position: relative;
-	color: $color-main;
-	&__title {
-		@include reset-button;
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		&::before {
-			display: block;
-			width: 16px;
-			height: 16px;
-			content: '';
-			background: url('../images/ru.svg') center no-repeat;
-			margin-right: 8px;
-		}
-		&::after {
-			display: block;
-			width: 12px;
-			height: 16px;
-			content: '';
-			background: url('../images/arrow-down.svg') center no-repeat;
-			margin-left: 8px;
-		}
-	}
-	&__list {
-		@include reset-list;
-		position: absolute;
-		top: 20px;
-		right: 0;
-		left: 16px;
-		min-width: 100px;
-		white-space: nowrap;
-		background-color: $color-white;
-		border: 1px solid $color-main;
-		padding: 0;
-		opacity: 0;
-		visibility: hidden;
-		transition: opacity .1s ease;
-		&.active {
-			opacity: 1;
-			visibility: visible;
-		}
-	}
-	&__item {
-		padding: 4px 6px;
-		cursor: pointer;
-		transition: color .1s ease, background-color .1s ease;
-		&:hover {
-			background-color: $color-main-light;
-			color: $color-black;
-		}
-	}
 }
 
 .slider {
@@ -168,7 +45,6 @@ input.error {
 		height: 560px;
 		background-position: center;
 		background-size: cover;
-		// background-size: contain;
 		background-repeat: no-repeat;
 		cursor: pointer;
 		&::before {
@@ -185,7 +61,6 @@ input.error {
 			width: 1903px;
 			height: 560px;
 			background-image: url('../images/slider-1.jpg');
-			// background-position-y: 70%;
 		}
 		&_number_2 {
 			width: 1903px;
@@ -234,7 +109,7 @@ input.error {
 	&__button {
 		@include reset-link;
 		display: inline-block;
-		color: $color-white;
+		color: #fff;
 		margin-top: 24px;
 	}
 	&__dots-list {
@@ -257,162 +132,22 @@ input.error {
 		display: block;
 		width: 80px;
 		height: 4px;
-		background-color: $color-white;
+		background-color: #fff;
 		box-shadow: 0px 0px 8px rgba(26, 32, 34, 0.22);
 		border-radius: 4px;
 		&.active {
-			background-color: $color-main;
+			background-color: rgb(48, 79, 216);
 		}
 	}
 }
-
-.callback {
-	&__background {
-		background-image: linear-gradient(rgba(28, 62, 83, 0.5)), url('../images/form-bg.jpg');
-		background-size: cover;
-	}
-	&__form {
-
+.button {
+	background-color:rgb(48, 79, 216);
+	border-radius: 4px;
+	padding: 7px 20px;
+	&:hover {
+		background-color:rgb(30, 64, 216);
 	}
 }
-.cards {
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-start;
-	margin: 0 -12px;
-	&__item  {
-		position: relative;
-		width: 374px;
-		height: 254px;
-		background: $color-white;
-		box-shadow: 0px 0px 0px 1px #F2F2F2;
-		border-radius: 4px;
-		padding: 76px 62px;
-		margin: 0 12px;
-		&:hover {
-			box-shadow: none;
-			& .cards__overlay {
-				opacity: 1;
-			}
-		}
-	}
-	&__overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-start;
-		width: 374px;
-		height: 256px;
-		background: $color-main-light;
-		border-radius: 4px;
-		box-shadow: 0px 0px 20px rgba(38, 55, 61, 0.07), 0px 0px 0px 1px #DCE9F1;
-		padding: 24px;
-		margin: 0;
-		opacity: 0;
-		transition: opacity .4s ease;
-	}
-	&__text-block {
-		margin-bottom: 8px;
-		span {
-			&:first-child {
-				color: $color-main;
-			}
-			&:last-child {
-				color: $color-black;
-			}
-		}
-	}
-	&__button {
-		display: none;
-		margin: 24px auto 0 auto;
-	}
-	&__prev {
-		left: -40px;
-	}
-	&__next {
-		right: -40px;
-	}
-}
-.slick-track {
-	padding: 1px 0;
-}
-.slick-arrow {
-	position: absolute;
-	top: 50%;
-	width: 40px;
-	height: 40px;
-	transform: translateY(-50%);
-}
-
-.contacts {
-	&__wrapper {
-		display: flex;
-		justify-content: flex-start;
-		align-items: flex-start;
-		margin: 0 -22px;
-	}
-	&__text-block {
-		width: 450px;
-		margin: 0 22px;
-		& ul li {
-			
-			& > a {
-				@include reset-link;
-			}
-		}
-	}
-	&__item {
-		&:not(:first-child) {
-			margin-top: 16px;
-		}
-		&[data-address] {
-			padding-left: 24px;
-			background: url('../images/geo.svg') 0 2px no-repeat;
-		}
-	}
-	&__link {
-		padding-left: 24px;
-		&[data-phone] {
-			background: url('../images/phone-gray.svg') 0 1px no-repeat;
-			
-		}
-		&[data-fax] {
-			background: url('../images/fax.svg') 0 1px no-repeat;
-		}
-		&[data-email] {
-			background: url('../images/email-gray.svg') 0 1px no-repeat;
-		}
-	}
-	&__subtitle {
-		display: flex;
-		justify-content: flex-start;
-		align-items: flex-start;
-		font-weight: bold;
-		margin: 48px 0 24px;
-		&::after {
-			content: '';
-			flex-grow: 1;
-			height: 1px;
-			background-color: $color-gray;
-			margin: 11px 0 0 8px;
-		}
-	}
-	&__map-wrapper {
-		width: 675px;
-		height: 464px;
-		background-color: #FCFCF7;
-		margin: 0 22px;
-	}
-	&__map {
-		width: 100%;
-		height: 100%;
-	}
-}
-
-
 
 
 /* ПОДКЛЮЧЕНИЕ СТИЛЕЙ АДАПТИВА */
