@@ -29,10 +29,16 @@ img {
 	padding: 0 40px;	
 }
 
+.title {
+	text-transform: uppercase;
+	margin-top: 70px;
+	margin-bottom: 30px;
+}
+
 .slider {
 	position: relative;
 	width: 100%;
-	height: 560px;
+	height: 600px;
 	overflow: hidden;
 	&__item {
 		position: absolute;
@@ -42,7 +48,7 @@ img {
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
-		height: 560px;
+		height: 600px;
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -58,29 +64,19 @@ img {
 			background: linear-gradient(90deg, rgba(235, 247, 255, 0.53) 24.07%, rgba(255, 255, 255, 0) 100%);
 		}
 		&_number_1 {
-			width: 1903px;
-			height: 560px;
-			background-image: url('../images/slider-1.jpg');
+			background-image: url('../images/slider-1.png');
 		}
 		&_number_2 {
-			width: 1903px;
-			height: 560px;
-			background-image: url('../images/slider-2.jpg');
+			background-image: url('../images/slider-2.png');
 		}
 		&_number_3 {
-			width: 1903px;
-			height: 560px;
-			background-image: url('../images/slider-3.jpg');
+			background-image: url('../images/slider-3.png');
 		}
 		&_number_4 {
-			width: 1903px;
-			height: 560px;
-			background-image: url('../images/slider-4.jpg');
+			background-image: url('../images/slider-4.png');
 		}
 		&_number_5 {
-			width: 1903px;
-			height: 560px;
-			background-image: url('../images/slider-5.jpg');
+			background-image: url('../images/slider-5.png');
 		}
 		&.animate {
 			animation: 1s linear 0s slideChange;
@@ -143,7 +139,7 @@ img {
 .button {
 	background-color:rgb(48, 79, 216);
 	border-radius: 4px;
-	padding: 7px 20px;
+	padding: 7px 25px;
 	&:hover {
 		background-color:rgb(30, 64, 216);
 	}
