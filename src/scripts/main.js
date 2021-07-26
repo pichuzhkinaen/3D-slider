@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+	// home-slider start
 	const dotBtn = $('.slider__dots-button'),
 		  sliderItem = $('.slider__item');
 	let currentSlide = $('.slider__item:eq(0)');
@@ -61,4 +62,5 @@ $(document).ready(function(){
 			$(dotBtn).eq(slideIndex + 1).addClass('active');
 		}
 	}
+	// home-slider end
 });
