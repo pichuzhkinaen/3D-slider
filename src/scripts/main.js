@@ -2,13 +2,17 @@ $(document).ready(function(){
 
 	// home-slider start
 	const dotBtn = $('.slider__dots-button'),
-		  sliderItem = $('.slider__item');
+		sliderItem = $('.slider__item');
 	let currentSlide = $('.slider__item:eq(0)');
-
 	$('.slider__dots-button:eq(0)').addClass('active');
-
-	$(sliderItem).css('zIndex', 0);
-	$(currentSlide).css('zIndex', 1);
+	
+	// Отрисовка изображения первого слайда, после того, как браузер получит изображение
+	let img = new Image();
+	img.src = '/src/images/slider-1.png';
+	
+	img.onload = function(){
+		$(sliderItem).css('visibility', 'visible');
+	}
 
 	$(sliderItem).on('click', function() {
 		currentSlide = this;
@@ -25,7 +29,6 @@ $(document).ready(function(){
 		currentSlide = $(sliderItem).filter(function () { 
 			return $(this).css('zIndex') > 0; 
 		});
-		// console.log(currentSlide);
 
 		animationSliderDot(dotIndex, currentSlide);
 	});
@@ -42,7 +45,6 @@ $(document).ready(function(){
 	}
 
 	function animationSlider(currentSlide, slideIndex) {
-		// console.log(currentSlide);
 		
 		if ($(currentSlide).next().length === 0) {
 			$(currentSlide).removeClass('animate');
